@@ -9,3 +9,5 @@
 
 1.  Клонируйте проект с GitHub (git clone https://github.com/maxim-bekish/tea.git) или скачайте архив с репозиторием;
 2.  Запустите браузере страницу index.html;
+
+Демо: https://maxim-bekish.github.io/tea/
