@@ -1,0 +1,49 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	min-height: 52px;
+	padding: 12px 28px;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: $color-text;
+	background: $color-accent;
+	border: 0;
+	border-radius: $radius-sm;
+	cursor: pointer;
+	transition:
+		background-color $transition,
+		transform $transition,
+		box-shadow $transition;
+
+	@include hover {
+		background: $color-accent-hover;
+		box-shadow: 0 6px 16px rgba($color-accent-hover, 0.35);
+		transform: translateY(-1px);
+	}
+
+	&:active {
+		transform: translateY(0);
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		@include focus-ring;
+	}
+
+	&.is-added {
+		color: #fff;
+		background: $color-success;
+		box-shadow: none;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+	}
+}

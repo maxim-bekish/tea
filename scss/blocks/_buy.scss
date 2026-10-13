@@ -1,0 +1,82 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.buy {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 24px;
+		font-size: 14px;
+	}
+
+	&__meta-row {
+		display: flex;
+		gap: 6px;
+
+		dt {
+			color: $color-muted;
+		}
+		dd {
+			font-weight: 600;
+		}
+	}
+
+	&__stock {
+		color: $color-success;
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding-top: 20px;
+		border-top: 1px solid $color-border;
+
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__button {
+		width: 100%;
+
+		@include tablet {
+			width: auto;
+			min-width: 220px;
+		}
+	}
+}
+
+.price {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 4px 12px;
+
+	&__current {
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 1.1;
+		color: $color-price;
+		font-variant-numeric: tabular-nums;
+	}
+
+	&__old {
+		font-size: 18px;
+		color: $color-muted;
+		font-variant-numeric: tabular-nums;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+@mixin tablet {
+	@media (min-width: $bp-tablet) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $bp-desktop) {
+		@content;
+	}
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin focus-ring {
+	outline: 3px solid rgba($color-accent-hover, 0.6);
+	outline-offset: 2px;
+}
